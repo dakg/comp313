@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://Runali:Thisismypassword123@quotationsystem.xmras.mongodb.net/quotation_system?retryWrites=true&w=majority",
+    "secretOrKey": "secret"
+}

@@ -1,0 +1,42 @@
+.login, .register {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(158, 151, 154, 0.9);
+}
+.login-right h1, .signup-right h1 {
+    font-weight: bolder;
+    padding: 5px 0 15px 0;
+    border-bottom: 5px solid #b18800;
+    padding-top: 10px;
+}
+
+.login-left h4, .signup-left h4 {
+    font-weight: bold;
+    color:rgb(255, 255, 255)
+}
+.login-left, .login-right, .signup-left, .signup-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form label {
+    color: #040514 !important;
+  }
+
+form input::placeholder {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+form input, form select {
+    height: 2rem;
+    width: 18rem;
+}

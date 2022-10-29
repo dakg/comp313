@@ -1,0 +1,7 @@
+#Use to set your environment variables
+/server/.env
+
+/server/node_modules
+
+node_modules
+
