@@ -8,6 +8,7 @@ module.exports = validateRegisterInput = data => {
     data.email = !isEmpty(data.email) ? data.email : "";
     data.password = !isEmpty(data.password) ? data.password : "";
     data.password2 = !isEmpty(data.password2) ? data.password2 : "";
+    data.usertype= !isEmpty(data.usertype) ? data.usertype : "";
 
     //name Checks
     if (validator.isEmpty(data.name)) {
@@ -21,16 +22,20 @@ module.exports = validateRegisterInput = data => {
         errors.email = "Email is Invalid";
     }
 
+    if(validator.isEmpty(data.usertype)){
+        errors.usertype = "User Type is required";
+    }
+
     //Password Checks
     if (validator.isEmpty(data.password)) {
         errors.password = "Password field is required";
     }
     // Password length checks
     else if (!validator.isLength(data.password, {
-            min: 6,
+            min: 2,
             max: 30
         })) {
-        errors.password = "Password must be at least 6 characters";
+        errors.password = "Password must be at least 2 characters";
     }
 
     // Password2 checks
