@@ -5,7 +5,7 @@ import { logoutUser } from '../../redux/actions/authActions';
 import './Dashboard.css';
 import NavBar from '../Navbar/DashboardNavbar.js';
 import Search from '../Search/Search';
-class Dashboard extends Component {
+class AdminDashboard extends Component {
  
   render() {
     const { user } = this.props.auth;
@@ -16,7 +16,7 @@ class Dashboard extends Component {
       <section>
 <NavBar/>
 </section>
-      <section className="dashboard">
+      <section className="admindashboard">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -27,7 +27,7 @@ class Dashboard extends Component {
                  <b> {user.email}</b>
                 </h1>
                 <h3>
-                  You are Successfully logged into a Full-stack MERN Application
+                  You are Successfully logged in the Dummy Admin Dashboard!
                 </h3>
                 
               </div>
@@ -40,7 +40,7 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+AdminDashboard.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -48,4 +48,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(AdminDashboard);

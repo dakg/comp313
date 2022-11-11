@@ -13,6 +13,7 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './redux/actions/authActions';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard';
+import AdminDashboard from './components/Dashboard/AdminDashboard';
 import Customization from './components/Customization/customization';
 import ProductList from './components/Search/ProductList';
 import Search from './components/Search/Search';
@@ -52,6 +53,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} /> 
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/admindashboard" component={AdminDashboard} />
             <Route path="/search" component={Search}/>
           <Route path="/customization" component={Customization}/>
           <Route path="/ProductList" component={ProductList}/>
