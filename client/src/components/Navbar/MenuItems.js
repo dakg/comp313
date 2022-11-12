@@ -11,6 +11,11 @@ export const MenuItems = [
     cName: "nav-link",
   },
   {
+    title: "Quotation History",
+    url: "/quotation-history",
+    cName: "nav-link",
+  },
+  {
     title: "Login",
     url: "/login",
     cName: "nav-link",

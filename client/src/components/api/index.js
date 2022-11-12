@@ -20,6 +20,10 @@ const getAllSpecs =() => {
     return API.get("/specs");
 };
 
+const getAllQuotationHistory =() =>{
+    return API.get('/quotations/quotation-history')
+}
+
 const getLastQuote =() =>{
     return API.get('/quotations/customization')
 }
@@ -29,5 +33,6 @@ export default {
     getAllLaptops,
     getAllSpecs,
     addLaptop,
-    getLastQuote
+    getLastQuote,
+    getAllQuotationHistory
 };

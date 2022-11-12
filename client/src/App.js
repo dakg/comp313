@@ -22,6 +22,8 @@ import Summary from './components/Summary/Summary'
 import SpecsList from './components/Customization/specsList';
 import AddSpecs from './components/Customization/addSpecs';
 import EditSpecs from './components/Customization/editSpecs';
+import QuotationHistory from './components/History/History';
+
 
 
 
@@ -61,6 +63,7 @@ function App() {
           <Route path="/specsList" component={SpecsList}/>
           <Route path="/addSpecs" component={AddSpecs}/>
           <Route path="/editSpecs" component={EditSpecs}/>
+          <Route path="/quotation-history" component={QuotationHistory}/>
           <Route
             exact
             path="/forgotpassword"
