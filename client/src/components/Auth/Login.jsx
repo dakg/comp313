@@ -9,25 +9,55 @@ import axios from "axios";
 import NavBar from '../Navbar/Navbar.js';
 
 class Login extends Component {
-  constructor(props) {
+ 
+  constructor(props){
     super(props);
 
     this.state = {
       email: "",
       password: "",
       errors: {},
+    
     };
   }
+  
   componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
+    
+      // const { user } = this.props.auth;
+     
+      // if(user.role = "Admin"){
+      //   this.props.history.push("/admindashboard");
+      // }
+      
+      //  else if (user.role = "Individual Customer")
+      //  {
+      //   this.props.history.push("/dashboard");
+      
+      //  }
       this.props.history.push("/dashboard");
     }
+    
   }
+  
   componentWillReceiveProps(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard"); // push user to dashboard when they login
-    }
+    if (nextProps.auth.isAuthenticated )
+    {
+      const { user } = this.props.auth;
+     
+      if(user.role == 'Admin'){
+        this.props.history.push("/admindashboard");
+      }
+      
+       else if (user.role == 'Individual Customer')
+       {
+        this.props.history.push("/dashboard");
+      
+       }
+
+    } 
+
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors,
@@ -49,6 +79,7 @@ class Login extends Component {
 
   render() {
     const { email, password, errors } = this.state;
+    const { user } = this.props.auth;
     return (
       <section>
 
