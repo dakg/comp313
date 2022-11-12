@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { MenuItems } from './MenuItems';
+import { AdminMenuItems } from './AdminMenu';
+import { Link } from 'react-router-dom';
 import { Button } from "./Button/Button.js";
 import './Navbar.css';
 import { logoutUser } from '../../redux/actions/authActions';
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 class DashboardNavbar extends Component{
@@ -15,6 +17,7 @@ class DashboardNavbar extends Component{
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
     }
+ 
     render(){
      
         return(
@@ -25,13 +28,25 @@ class DashboardNavbar extends Component{
                 <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                   <li> <button
+                   
+                    {AdminMenuItems.map((item, index) =>{
+                        return(
+                        <li key={index}>
+                            <a className={item.cName} href={item.url}>
+                            {item.title}
+                            </a>
+                        </li>)
+                    })}
+                    <li> <button
                   onClick={this.onLogoutClick}
-                  className="btn btn-lg btn-warning mt-5"
+                  className="btn btn-lg btn-warning"
                 >
                   Logout
                 </button></li>
                 </ul>
+               
+                
+                
                
             </nav>     
         )

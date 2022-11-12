@@ -22,12 +22,15 @@ const getAllSpecs =() => {
 
 const getLastQuote =() =>{
     return API.get('/quotations/customization')
-}
-
+};
+const getAllUsers = () => {
+    return API.get("/userList");
+};
 export default {
     searchLaptops,
     getAllLaptops,
     getAllSpecs,
     addLaptop,
-    getLastQuote
+    getLastQuote,
+    getAllUsers
 };
