@@ -62,7 +62,15 @@ onChangeimageUrl(e){
     };
     
     axios.post('http://localhost:5000/api/laptops/addLaptop', newLaptop)
-    .then(res => console.log(res.data));
+    .then(res => {
+      console.log(res.data);
+      alert("Product Successfully Added!")
+      this.props.history.push('/ProductList')
+    })
+    .catch((err) =>{
+      console.log(err.response.data);
+      alert(err.response.data.data+"\nThis Product already exists. Please try again.")
+    });
     this.setState({
       laptopName: '',
       brandName:'',
@@ -70,8 +78,6 @@ onChangeimageUrl(e){
       imageUrl:''
     })
 
-    alert("Product Successfully Added!")
-    this.props.history.push('/ProductList')
 
   }
 

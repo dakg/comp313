@@ -43,21 +43,31 @@ router.get("/", async (req, res) => {
 });
 
 
-router.post('/addLaptop', async(req,res) => {
+router.post('/addLaptop', (req,res) => {
 const newLaptop = new Laptops(req.body)
-try{
-  await newLaptop.save()
-  res.status(201).json({
-    status: 'Success',
-    data : { newLaptop}
-  })
-}catch(err){
-  res.status(500).json({
-    status:'Failed',
-    message: err
-  })
-}
-})
+Laptops.findOne({laptopName: req.body.laptopName})
+.then(async laptop =>{
+  if (laptop) {
+    return res.status(420).json({
+      message: "This Product already exists.",
+      data : req.body.laptopName
+    });
+  } else {
+    try{
+      await newLaptop.save()
+      res.status(201).json({
+        status: 'Success',
+        data : { newLaptop}
+      })
+    }catch(err){
+      res.status(500).json({
+        status:'Failed',
+        message: err
+      })
+    }
+  }
+});
+});
 
 router.post('/editLaptop', async(req,res) => {
   const updateLaptop = req.body;
