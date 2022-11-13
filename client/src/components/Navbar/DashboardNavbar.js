@@ -8,6 +8,7 @@ import { logoutUser } from '../../redux/actions/authActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 class DashboardNavbar extends Component{
+  
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
@@ -19,7 +20,7 @@ class DashboardNavbar extends Component{
     }
  
     render(){
-     
+      const { user } = this.props.auth;
         return(
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">QuoteMe!<i className="fas fa-tools">
@@ -27,9 +28,10 @@ class DashboardNavbar extends Component{
                 <div className="menu-icon" onClick={this.handleClick}>
                 <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
+                
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                   
-                    {AdminMenuItems.map((item, index) =>{
+                
+                    {user.role==='Admin' && AdminMenuItems.map((item, index) =>{
                         return(
                         <li key={index}>
                             <a className={item.cName} href={item.url}>
@@ -37,6 +39,7 @@ class DashboardNavbar extends Component{
                             </a>
                         </li>)
                     })}
+                    
                     <li> <button
                   onClick={this.onLogoutClick}
                   className="btn btn-lg btn-warning"
