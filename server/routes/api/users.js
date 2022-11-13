@@ -230,4 +230,18 @@ Router.post('/login', (req, res) => {
     });
 });
 
+//UserList
+Router.get("/userList", async (req, res) => {
+    User.find()
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(404).send({
+          message: err.message || "Error while retrieving userList",
+        });
+      });
+  });
+  
+
 module.exports = Router;

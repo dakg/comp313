@@ -23,7 +23,7 @@ import Summary from './components/Summary/Summary'
 import SpecsList from './components/Customization/specsList';
 import AddSpecs from './components/Customization/addSpecs';
 import EditSpecs from './components/Customization/editSpecs';
-
+import UserList from './components/UserList/UserList';
 
 
 function App() {
@@ -63,6 +63,7 @@ function App() {
           <Route path="/specsList" component={SpecsList}/>
           <Route path="/addSpecs" component={AddSpecs}/>
           <Route path="/editSpecs" component={EditSpecs}/>
+          <Route path="/UserList" component={UserList}/>
           <Route
             exact
             path="/forgotpassword"
