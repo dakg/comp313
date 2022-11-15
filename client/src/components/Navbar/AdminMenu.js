@@ -9,4 +9,9 @@ export const AdminMenuItems = [
         url: "/UserList",
         cName: "nav-link",
       },
+      {
+        title: "InactiveUserList",
+        url: "/InactiveUserList",
+        cName: "nav-link",
+      },
     ];
