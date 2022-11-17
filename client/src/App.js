@@ -24,7 +24,7 @@ import SpecsList from './components/Customization/specsList';
 import AddSpecs from './components/Customization/addSpecs';
 import EditSpecs from './components/Customization/editSpecs';
 import UserList from './components/UserList/UserList';
-
+import InactiveUserList from './components/InactiveUserList/InactiveUserList';
 
 function App() {
   // Check for token to keep user logged in
@@ -64,6 +64,7 @@ function App() {
           <Route path="/addSpecs" component={AddSpecs}/>
           <Route path="/editSpecs" component={EditSpecs}/>
           <Route path="/UserList" component={UserList}/>
+          <Route path="/InactiveUserList" component={InactiveUserList}/>
           <Route
             exact
             path="/forgotpassword"
