@@ -15,7 +15,32 @@ router.get('/customization', async (req, res) => {
     });
 })
 
-router.post('/customization', async (req, res) => {
+  router.get("/", async (req, res) => {
+    specsModel.find()
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(404).send({
+          message: err.message || "Error while retrieving specs",
+        });
+      });
+  });
+
+  router.get('/quotation-history', async(req,res) => {
+  Quotations.find().sort({'_id':-1})
+          .then((data) => {
+            res.send(data);
+          })
+          .catch((err) => {
+            res.status(404).send({
+              message: err.message || "Error while retrieving quote history",
+            });
+          });
+  })
+
+
+router.post('/customization', async(req,res) => {
   const newQuote = new Quotations(req.body)
   try {
     await newQuote.save()

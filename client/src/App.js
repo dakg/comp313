@@ -25,6 +25,10 @@ import AddSpecs from './components/Customization/addSpecs';
 import EditSpecs from './components/Customization/editSpecs';
 import UserList from './components/UserList/UserList';
 import InactiveUserList from './components/InactiveUserList/InactiveUserList';
+import QuotationHistory from './components/History/History';
+
+
+
 
 function App() {
   // Check for token to keep user logged in
@@ -65,6 +69,7 @@ function App() {
           <Route path="/editSpecs" component={EditSpecs}/>
           <Route path="/UserList" component={UserList}/>
           <Route path="/InactiveUserList" component={InactiveUserList}/>
+          <Route path="/quotation-history" component={QuotationHistory}/>
           <Route
             exact
             path="/forgotpassword"
