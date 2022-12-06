@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AdminMenuItems } from './AdminMenu';
+import { LoggedinMenu } from './LoggedinMenu';
 import { Link } from 'react-router-dom';
 import { Button } from "./Button/Button.js";
 import './Navbar.css';
@@ -32,6 +33,15 @@ class DashboardNavbar extends Component{
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                 
                     {user.role==='Admin' && AdminMenuItems.map((item, index) =>{
+                        return(
+                        <li key={index}>
+                            <a className={item.cName} href={item.url}>
+                            {item.title}
+                            </a>
+                        </li>)
+                    })}
+                 
+                    {LoggedinMenu.map((item, index) =>{
                         return(
                         <li key={index}>
                             <a className={item.cName} href={item.url}>
