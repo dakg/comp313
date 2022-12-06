@@ -25,7 +25,17 @@ class Login extends Component {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
     
-  
+      // const { user } = this.props.auth;
+     
+      // if(user.role = "Admin"){
+      //   this.props.history.push("/admindashboard");
+      // }
+      
+      //  else if (user.role = "Individual Customer")
+      //  {
+      //   this.props.history.push("/dashboard");
+      
+      //  }
       this.props.history.push("/dashboard");
     }
     
@@ -43,11 +53,6 @@ class Login extends Component {
        else if (user.role == 'Individual Customer')
        {
         this.props.history.push("/dashboard");
-      
-       } 
-       else if (user.role == 'Business / Organisation')
-       {
-        this.props.history.push("/businessdashboard");
       
        }
 
