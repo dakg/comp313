@@ -10,6 +10,11 @@ export const AdminMenuItems = [
         cName: "nav-link",
       },
       {
+        title: "Quotation History",
+        url: "/quotation-history",
+        cName: "nav-link",
+      },
+      {
         title: "InactiveUserList",
         url: "/InactiveUserList",
         cName: "nav-link",

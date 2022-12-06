@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import NavBar from '../Navbar/Navbar.js';
+import NavBar from '../Navbar/DashboardNavbar.js';
 import "bootstrap/dist/css/bootstrap.css";
 import { connect } from "react-redux";
 import axios from 'axios';
