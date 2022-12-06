@@ -21,15 +21,17 @@ class AdminDashboard extends Component {
           <div className="row">
             <div className="col-12">
               <div className="content">
-                <h1>
-                  Hi! <b>{user.name.split(' ')[0]} </b>
-                 <b>{user.role}</b> 
-                 <b> {user.email}</b>
-                </h1>
-                <h3>
-                  You are Successfully logged in the Dummy Admin Dashboard!
-                </h3>
-                
+              <h1>
+                 <h1>Welcome to Admin Dashboard for QuoteMe</h1>
+                 <br/>
+                 User Name: <b>{user.name} </b>
+                 <br/><br/>
+                 Account Type: <b>{user.role}</b>
+                 <br/> <br/>
+                 User Email: <b> {user.email}</b>
+                 <br/><br/>
+
+                </h1>     
               </div>
             </div>
           </div>

@@ -5,14 +5,12 @@ import { logoutUser } from '../../redux/actions/authActions';
 import './Dashboard.css';
 import NavBar from '../Navbar/DashboardNavbar.js';
 import Search from '../Search/Search';
+
 class Dashboard extends Component {
- 
   render() {
     const { user } = this.props.auth;
     return (
       <section>
-
-   
       <section>
 <NavBar/>
 </section>
@@ -22,16 +20,20 @@ class Dashboard extends Component {
             <div className="col-12">
               <div className="content">
                 <h1>
-                  Hi! <b>{user.name.split(' ')[0]} </b>
-                 <b>{user.role}</b> 
-                 <b> {user.email}</b>
-                </h1>
-                <h3>
-                  You are Successfully logged into a Full-stack MERN Application
-                </h3>
-                
+                 <h1>Welcome to QuoteMe</h1>
+                 <br/>
+                 User Name: <b>{user.name} </b>
+                 <br/><br/>
+                 Account Type: <b>{user.role}</b>
+                 <br/> <br/>
+                 User Email: <b> {user.email}</b>
+                 <br/><br/>
+
+                </h1>                
               </div>
             </div>
+
+
           </div>
         </div>
       </section>
