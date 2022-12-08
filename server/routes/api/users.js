@@ -242,6 +242,24 @@ Router.get("/userList", async (req, res) => {
         });
       });
   });
+
+  Router.post("/delete", async (req, res) => {
+    var id = req.body.id;
+    console.log(req.body.id)
+    User.findByIdAndDelete({ _id : id })
+      .then(response => {
+        res.status(201).json({
+            status: 'Success',
+            response:response
+          })
+      })
+      .catch((response) => {
+        res.status(500).json({
+            status:'Failed',
+            message: response
+          });
+      });
+  });
   
 
 module.exports = Router;
