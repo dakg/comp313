@@ -12,7 +12,7 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './redux/actions/authActions';
 import PrivateRoute from './components/private-route/PrivateRoute';
-import Dashboard from './components/Dashboard/dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import BusinessDashboard from './components/Dashboard/businessdashboard';
 import Customization from './components/Customization/customization';
